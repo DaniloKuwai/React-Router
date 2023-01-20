@@ -1,0 +1,19 @@
+Nessa aula vamos apenas criar o projeto para a próxima aula:
+
+criei uma pasta chamada React-router e dentro dela pelo prompt
+vou dar o comando para criar o projeto.
+
+npx create-react-app navegacao
+
+apenas isso.
+
+depois que o projeto foi criado, apaguei todos os arquivos dentro de
+src e criei uma index.js, dentro dele vamos digitar o seguinte código:
+
+import ReactDOM from 'react-dom'
+import React from "react"
+
+ReactDOM.render(
+    <h1>Olá React</h1>,
+    document.getElementById('root')
+)
