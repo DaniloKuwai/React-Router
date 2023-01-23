@@ -1,0 +1,88 @@
+Nessa aula vamos começar a criação dos nossos componentes separando a nossa estrutura
+para iniciar o projeto
+
+ma pasta components vamos criar 4 arquivos:
+
+Content.css
+Content.jsx
+Menu.css
+Menu.jsx
+
+Content.jsx:
+
+import React from "react";
+import './Content.css'
+
+export default function Content(props){
+    return (
+            <main className="Menu">
+            Componente Content
+            </main>
+    )
+}
+
+Menu.jsx:
+
+import React from "react";
+import './Menu.css'
+
+export default function Menu(props){
+    return (
+            <aside className="Menu">
+            Componente Menu
+            </aside>
+    )
+}
+
+--------------------------------------------
+
+dentro de src vamos criar as views e dentro dela uma pasta examples:
+
+vamos criar 4 arquivos também dentro dela:
+
+About.jsx
+App.css
+App.jsx
+Home.jsx
+
+About.jsx:
+
+import React from "react";
+
+export default function About(props){
+    return (
+            <div className="Home">
+            <h1>Sobre</h1>
+            <p>O nosso sistema foi criado...</p>
+            </div>
+    )
+}
+
+App.jsx:
+
+import React from "react";
+import './App.css'
+
+export default function App(props){
+    return (
+        <div className="App">
+            Componente App
+        </div>
+    )
+}
+
+Home.jsx:
+
+import React from "react";
+
+export default function Home(props){
+    return (
+            <div className="Home">
+            <h1>Inicio</h1>
+            <p>Bem vindo</p>
+            </div>
+    )
+}
+
+
+
