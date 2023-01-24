@@ -1,0 +1,16 @@
+Antes de tudo temos que fazer a instalação do pacote do react router, para isso vamos seguir
+os seguintes passos:
+
+1º remover a instalação atual:
+
+npm remove react-router-dom
+
+2º para instalar agora a versão 6
+
+npm install react-router-dom@6
+
+Nessa aula vamos começar a utilizar o react router, de ínicio todo o conteúdo que vai ser
+relacionado a navegação tem que ser envolvida na tag iniciar <Router> e para usar ela temos
+que dar o seguinte import import {BrowserRouter as Router} from 'react-router-dom' o as Router
+é um alias
+
