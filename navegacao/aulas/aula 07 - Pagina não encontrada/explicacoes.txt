@@ -1,0 +1,87 @@
+Nessa aula vamos criar um link quando for um componente com a página não encontrada, para isso basta criar uma rota
+dessa forma com *, ou seja, todos os componentes que não forem localizados através de links, vai ser direcionado para
+a página NotFound.jsx que nós criamos, vamos aos códigos:
+
+página NotFound.jsx:
+
+import React from "react";
+
+export default function NotFound(props){
+    return (
+            <div className="Sobre">
+            <h1>404</h1>
+            <p>Ops...Página não encontrada</p>
+            </div>
+    )
+}
+
+Após criar as páginas vamos ajustar e criar uma rota nova dentro do Content.jsx:
+
+import React from "react";
+import './Content.css'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
+import About from '../../views/examples/About'
+import Home from '../../views/examples/Home'
+import Param from '../../views/examples/Param'
+import NotFound from '../../views/examples/NotFound'
+
+
+export default function Content(props){
+    return (
+            <main className="Content">
+                <Routes>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/param/:id" element={<Param/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                    adicionamos esse novo conteúdo-->>> <Route path="*" element={<NotFound/>}/>
+                </Routes>            
+            </main>
+            )
+}
+
+
+e dentro do menu.jsx, podemos adicionar vários links de componentes que não existem e todos eles vão apontar
+para a mesma página do NotFound.jsx.
+
+
+import React from "react";
+import './Menu.css'
+
+import { Link } from 'react-router-dom'
+
+export default function Menu(props){
+    return (
+            <aside className="Menu">
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/home">Inicio</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/param/123">Param #01</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/param/legal">Param #02</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/about">Sobre</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/naoExiste">Nao Existe</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/naoAchei">Nao Achei</Link>
+                    </li>
+                </ul>
+            </nav>
+            </aside>
+    )
+}
+
