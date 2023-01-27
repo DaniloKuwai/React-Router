@@ -79,4 +79,31 @@ a estrutura padrão quando se usa o react-router-dom é o seguinte:
         <Route path="/about" element={<About/>}/>
         <Route path="/home" element={<Home/>}/>
     </Routes>
-</BrowserRouter>        
+</BrowserRouter>
+
+Após esses procedimentos vamos também alterar o Menu.jsx, para colocar o novo atributo chamado LINK
+
+O código vai ficar dessa forma:
+
+import React from "react";
+import './Menu.css'
+
+import { Link } from 'react-router-dom'
+
+export default function Menu(props){
+    return (
+            <aside className="Menu">
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/home">Inicio</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/about">Sobre</Link>
+                    </li>
+                </ul>
+            </nav>
+            </aside>
+    )
+}
