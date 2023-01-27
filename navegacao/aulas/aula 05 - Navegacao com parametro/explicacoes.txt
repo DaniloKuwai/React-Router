@@ -1,0 +1,80 @@
+Nessa aula, vamos continuar a fazer a nossa navegação, só que agora
+uma navegação com parâmetro. Primeiro vamos criar dentro de examples o 
+Param.jsx:
+
+import React from "react";
+
+import { useParams } from 'react-router-dom'
+
+export default function Home(props){
+
+    const { id } = useParams()
+
+    return (
+            <div className="Home">
+            <h1>Inicio</h1>
+            <p>Valor: {id}</p>
+            </div>
+    )
+}
+
+e vamos adicionar no Menu.jsx:
+
+import React from "react";
+import './Menu.css'
+
+import { Link } from 'react-router-dom'
+
+export default function Menu(props){
+    return (
+            <aside className="Menu">
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/home">Inicio</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/param/123">Param #01</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/param">Param #02</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/about">Sobre</Link>
+                    </li>
+                </ul>
+            </nav>
+            </aside>
+    )
+}
+
+após adicionar os links vamos alterar o content.jsx também:
+
+import React from "react";
+import './Content.css'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
+import About from '../../views/examples/About'
+import Home from '../../views/examples/Home'
+import Param from '../../views/examples/Param'
+
+export default function Content(props){
+    return (
+            <main className="Content">
+                <Routes>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/param/:id" element={<Param/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                    
+                </Routes>            
+            </main>
+            )
+}
+
+Essa tag <Route path="/param/:id" element={<Param/>}/> especificamente
+tem um :id, que significa que vai receber a variável que será passado a partir
+da url
