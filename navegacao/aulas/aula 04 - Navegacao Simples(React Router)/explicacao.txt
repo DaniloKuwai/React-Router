@@ -7,10 +7,76 @@ npm remove react-router-dom
 
 2º para instalar agora a versão 6
 
-npm install react-router-dom@6
+npm install react-router-dom
+
+e também fazer outra instalação
+
+npm install history
 
 Nessa aula vamos começar a utilizar o react router, de ínicio todo o conteúdo que vai ser
 relacionado a navegação tem que ser envolvida na tag iniciar <Router> e para usar ela temos
 que dar o seguinte import import {BrowserRouter as Router} from 'react-router-dom' o as Router
 é um alias
 
+ou podemos também dar o import sem alias fazendo apenas dessa forma:
+
+import { BrowserRouter } from 'react-router-dom'
+
+depois que importamos nosso código no App.jsx vai ficar dessa forma:
+
+import React from "react";
+import Content from "../../components/layout/Content";
+import Menu from "../../components/layout/Menu";
+import './App.css'
+
+import { BrowserRouter } from 'react-router-dom'
+
+
+
+export default function App(props){
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Menu></Menu>
+                <Content></Content>
+            </BrowserRouter>
+        </div>
+    )
+}
+
+Após isso vamos colocar no nosso Content.jsx o seguinte código:
+
+import React from "react";
+import './Content.css'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
+import About from '../../views/examples/About'
+import Home from '../../views/examples/Home'
+
+export default function Content(props){
+    return (
+            <main className="Content">
+                <Routes>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                </Routes>            
+            </main>
+            )
+}
+
+
+Por padrão envolvemos as nossas rotas dentro de <Routes> </Routes>
+apontamos nossa rota utilizando o Route path="/a página" element={<About/>}/>
+
+o element utilizamos para puxar o componente importado, nesse exemplo estamos definindo nossa rota para About, que foi importada
+lá no topo com o import About from '../../views/examples/About'.
+
+a estrutura padrão quando se usa o react-router-dom é o seguinte:
+
+<BrowserRouter>
+    <Routes>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/home" element={<Home/>}/>
+    </Routes>
+</BrowserRouter>        
