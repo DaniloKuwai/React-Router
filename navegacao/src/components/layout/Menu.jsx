@@ -23,6 +23,10 @@ export default function Menu(props){
                     <li>
                         <Link to="/about">Sobre</Link>
                     </li>
+
+                    <li>
+                        <Link to="/naoExiste">Nao Existe</Link>
+                    </li>
                 </ul>
             </nav>
             </aside>

@@ -14,7 +14,6 @@ export default function Content(props){
                     <Route path="/about" element={<About/>}/>
                     <Route path="/param/:id" element={<Param/>}/>
                     <Route path="/home" element={<Home/>}/>
-                    
                 </Routes>            
             </main>
             )

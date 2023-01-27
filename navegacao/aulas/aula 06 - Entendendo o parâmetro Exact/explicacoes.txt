@@ -1,0 +1,15 @@
+Nessa aula vamos entender porquê quando se tem um componente quando não
+acha ele manda para o home.
+
+Isso acontece porquê quando o componente específico não é localizado ele
+vai procurar o primeiro item com / nas rotas e isso acaba direcionando
+para a página inicial.
+
+um exemplo é que se o primeiro item fosse esse:
+
+<Route exact path="/" element={<Home/>}/>
+
+ele ia buscar no / a primeira / que vamos supor seria o primeiro item,
+para ficar certo poderiamos colocar o exact que vai forçar a leitura após a barra
+do componente, caso exista corretamente ele vai direcionar, caso não exista ele não
+vai ter esse comportamento de direcionar para o home.
