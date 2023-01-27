@@ -27,6 +27,10 @@ export default function Menu(props){
                     <li>
                         <Link to="/naoExiste">Nao Existe</Link>
                     </li>
+
+                    <li>
+                        <Link to="/naoAchei">Nao Achei</Link>
+                    </li>
                 </ul>
             </nav>
             </aside>
